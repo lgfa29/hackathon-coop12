@@ -15,8 +15,10 @@ class FriendsController < ApplicationController
 	end
 	
 	def write_message
+	  @uid = params['uid']
+	  @bday =  params['bday'].split('/')
 	  @graph = Koala::Facebook::API.new(@oauth_token)
-	  @facts = Fact.where('date.mon' => Date.today.month )
+	  @facts = Fact.where(:month => @bday[0], :day => @bday[1] )
 	end
 	
 end

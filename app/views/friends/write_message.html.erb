@@ -6,7 +6,7 @@
   <%= submit_tag "Enviar" %>
 <% end %>
 
-<h2>Did you know?</h2> 
+<h2>Curious facts about <%=day_and_month(params['bday'])%></h2> 
 <p> <a href="javascript:document.getElementById('message_text').value += 'something';">Qualquer baboseira</a> </p>
 <% for fact in @facts %>
 	<p><%= fact.text %></p>

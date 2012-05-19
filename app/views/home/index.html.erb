@@ -9,7 +9,11 @@
 		 			<img style="float: left; margin-right: 15px;" src="<%=aniversario["pic_square"]%>">
 		 			<span style="float: left; color: #3B5998; font-size: 15px;"><b><%=aniversario["name"]%> </b> </span></br>
 		 			<span style="float: left; color: gray; font-size: 12px;"><%=aniversario["birthday_date"] %></span></br>
-		 			<a href="http://apps.facebook.com/hack-birthday-dev/friends/write_message"><span style="float: left; color: #3B5998; font-size: 12px;">Send a message</span></a>
+					<%= link_to :controller => "friends", 	:action => "write_message",
+					 								 		:uid => aniversario['uid'],
+													 		:bday => aniversario['birthday_date'] do %>
+						<span style="float: left; color: #3B5998; font-size: 12px;">Send a message</span>
+					<% end %>
 		 		</div>
 		 	</td>
 		 </tr>
