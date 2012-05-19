@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     @graph = Koala::Facebook::API.new(@oauth_token)
-    query="SELECT name, birthday_date FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) 
+    query="SELECT name, birthday_date, pic_square FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) 
                                                           AND strlen(birthday_date) != 0 
                                                           AND (substr(birthday_date, 0, 2) = '05' 
                                                           AND substr(birthday_date, 3, 5) >= '19')  

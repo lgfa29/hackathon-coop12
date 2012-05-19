@@ -1,13 +1,18 @@
-Ola home index
+<span style="margin: 10px;">Next Birthdays</span>
+
 <table border="0">
  <% if @aniversarios %>
- <% for aniversario in @aniversarios %>
- <tr>
- <td><b><%=aniversario["name"]%> </b></td>
- </tr>
- <tr>
- <td><%=aniversario["birthday_date"] %></td>
- </tr>
- <% end %>
+	 <% for aniversario in @aniversarios %>
+		 <tr style="margin: 10px">
+		 	<td>
+		 		<div style="float: left; margin: 10px; font-family: sans-serif; ">
+		 			<img style="float: left; margin-right: 15px;" src="<%=aniversario["pic_square"]%>">
+		 			<span style="float: left; color: #3B5998; font-size: 15px;"><b><%=aniversario["name"]%> </b> </span></br>
+		 			<span style="float: left; color: gray; font-size: 12px;"><%=aniversario["birthday_date"] %></span></br>
+		 			<a href="http://apps.facebook.com/hack-birthday-dev/friends/write_message"><span style="float: left; color: #3B5998; font-size: 12px;">Send a message</span></a>
+		 		</div>
+		 	</td>
+		 </tr>
+	 <% end %>
  <% end %>
 </table>
