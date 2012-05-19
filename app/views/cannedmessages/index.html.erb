@@ -1,8 +1,10 @@
-<h1>My Canned Messages</h1>
-
-<%= link_to 'New Canned Message', :action => :new %>
- 
-<table>
+<h1 class="title_canned">My Canned Messages</h1>
+</br>
+<%= link_to  :action => :new  do%>
+  <span class="button" style="margin-left: 20px;">New Canned Message</span>
+<% end %>
+</br> </br>
+<table class="messages">
   <tr>
     <th>Title</th>
     <th>Message</th>
