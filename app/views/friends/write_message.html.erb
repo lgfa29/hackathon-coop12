@@ -34,33 +34,25 @@
 				<% (0..23).each do |h| %>
 					<option value="<%= h %>"><%= h %></option>
 				<% end %>
+
 			</select>
 			:
 			<select name="min">
 				<option value="00">00</option>
+				<option value="10">10</option>
+				<option value="20">20</option>
 				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
 			</select>
-		  <%= submit_tag "Enviar" %>
+  			<%= submit_tag "Enviar" %>
 		<% end %>
-<<<<<<< HEAD
-	</select>
-	:
-	<select name="min">
-		<option value="00">00</option>
-		<option value="10">10</option>
-		<option value="20">20</option>
-		<option value="30">30</option>
-		<option value="40">40</option>
-		<option value="50">50</option>
-	</select>
-  <%= submit_tag "Enviar" %>
-<% end %>
-=======
+
 		<span id="inspiration">I need some inspiration...</span>
 	</div>
 
 </div>
->>>>>>> d714bd7edd1bd107012147fa9e37bc8473c5d6fd
+
 
 <h2 class="title_facts">Curious facts about <%=day_and_month(params['bday'])%></h2> 
 <span class="tip">Click on the facts to add them to your message</span>
