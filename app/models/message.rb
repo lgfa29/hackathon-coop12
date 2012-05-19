@@ -2,6 +2,7 @@ class Message
 	include Mongoid::Document
 
 	field :facebook_id, type: String
+	field :token, type: String
 	field :month_bday, type: Integer
 	field :day_bday, type: Integer
 	field :message, type: String
