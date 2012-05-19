@@ -1,14 +1,17 @@
 # config/facebook.yml
 
 development:
- app_id: 229748143802500
- secret_key: 1e3bc633bef608c1e90505b1182f7f17
+ app_id: 384885211564386
+ secret_key: 856dad484e9a35cfc26c378abc3ccb34
  canvas_url: https://apps.facebook.com/hack-birthday-dev/
 
 test:
+ app_id: 229748143802500
+ secret_key: 1e3bc633bef608c1e90505b1182f7f17
+ canvas_url: https://apps.facebook.com/birthdayhackathon/
  
 production:
- app_id: 384885211564386
- secret_key: 856dad484e9a35cfc26c378abc3ccb34
+ app_id: 229748143802500
+ secret_key: 1e3bc633bef608c1e90505b1182f7f17
  canvas_url: https://apps.facebook.com/birthdayhackathon/
   

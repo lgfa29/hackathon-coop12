@@ -36,7 +36,9 @@ class ApplicationController < ActionController::Base
 
     def require_added
       if @oauth_token.to_s.blank?
-        render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=#{APP_ID}&redirect_uri=#{CANVAS_URL}&scope=user_likes,friends_birthday";</script>|
+        #render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=#{APP_ID}&redirect_uri=#{CANVAS_URL}&scope=user_likes,friends_birthday";</script>|
+        render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=229748143802500&redirect_uri=https://apps.facebook.com/birthdayhackathon/&scope=user_likes,friends_birthday";</script>|
+        
         return false
       end
       true
