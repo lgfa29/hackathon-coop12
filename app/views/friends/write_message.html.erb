@@ -1,9 +1,11 @@
-<h1>Send a Message</h1>
+<h1 class="title_write">Write a Message</h1>
 <%= form_tag :action => 'send_message' do %>
-  <%= text_area_tag("message_text", "Happy Birthday!", :size => "50x12") %>
+
+  <%= text_area_tag("message_text", "Happy Birthday!\nDid you know that...", :size => "50x12") %>
   <%= hidden_field_tag(:destination, @uid) %>
   <%= hidden_field_tag(:day_bday, @bday[1]) %>
   <%= hidden_field_tag(:month_bday, @bday[0]) %>
+
   <br />
   Time to send: 
 	<select name="hour">
@@ -19,12 +21,9 @@
   <%= submit_tag "Enviar" %>
 <% end %>
 
+<h2 class="title_facts">Curious facts about <%=day_and_month(params['bday'])%></h2> 
+<span class="tip">Click on the facts to add them to your message</span>
 <br />
-
-
-
-
-<h2>Curious facts about <%=day_and_month(params['bday'])%></h2> 
 
 <table id="facts">
   <tbody>
