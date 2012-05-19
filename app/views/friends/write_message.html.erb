@@ -7,7 +7,13 @@
 <% end %>
 
 <h2>Curious facts about <%=day_and_month(params['bday'])%></h2> 
-<p> <a href="javascript:document.getElementById('message_text').value += 'something';">Qualquer baboseira</a> </p>
-<% for fact in @facts %>
-	<p><%= fact.text %></p>
-<% end %>
+
+<table id="facts">
+  <tbody>
+    <% @facts.each do |f| %>
+    	<tr class="fact_row">
+	      <td><%= f.text %></td>
+	    </tr>
+    <% end %>
+  </tbody>
+</table>
