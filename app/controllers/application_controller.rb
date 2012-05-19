@@ -37,12 +37,12 @@ class ApplicationController < ActionController::Base
     def require_added
       if @oauth_token.to_s.blank?
         ##DEV
-        render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=384885211564386&redirect_uri=http://apps.facebook.com/hack-birthday-dev/&scope=user_likes,friends_birthday,read_stream, publish_stream";</script>|
+#         render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=384885211564386&redirect_uri=http://apps.facebook.com/hack-birthday-dev/&scope=user_likes,friends_birthday,read_stream, publish_stream";</script>|
         
         #render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=#{APP_ID}&redirect_uri=#{CANVAS_URL}&scope=user_likes,friends_birthday,read_stream";</script>|
         
         ##PROD
-        #render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=229748143802500&redirect_uri=https://apps.facebook.com/birthdayhackathon/&scope=user_likes,friends_birthday,read_stream";</script>|
+        render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=229748143802500&redirect_uri=https://apps.facebook.com/birthdayhackathon/&scope=user_likes,friends_birthday,read_stream, publish_stream";</script>|
         
         return false
       end
