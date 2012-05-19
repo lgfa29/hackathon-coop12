@@ -43,6 +43,7 @@ table {
 	font-style: italic;
 }
 
+
 input, select {
 	outline: none;
 	background-image: url(https://s-static.ak.fbcdn.net/rsrc.php/v1/yi/r/Ce0Xa8hRU2A.png);
@@ -79,4 +80,32 @@ select {
 .time {
 	font-family: sans-serif;
 	font-size: 15px;
+}
+
+form {
+	width: 70%;
+}
+
+
+#canned {
+	float:right;
+	width: 25%;
+	padding: 10px;
+	
+}
+
+#canned_messages {
+	width:100%;
+}
+#canned_messages .hidden{
+	display:none;
+}
+
+.canned_row {
+	width: 100%;
+}
+
+.canned_row:hover {
+  background-color: #C3C3C3;
+	cursor: pointer;
 }

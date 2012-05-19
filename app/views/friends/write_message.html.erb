@@ -1,26 +1,48 @@
 
-<h1 class="title_write">Write a Message</h1>
-<%= form_tag :action => 'send_message' do %>
+<h1 class="title_write">Wish a Happy Birthday to <%=params['name']%></h1>
+<img style="float: left; margin-right: 15px;" src="<%=params['pic_square']%>">
 
-  <%= text_area_tag("message_text", "Happy Birthday!\nDid you know that...", :size => "50x12") %>
-  <%= hidden_field_tag(:destination, @uid) %>
-  <%= hidden_field_tag(:day_bday, @bday[1]) %>
-  <%= hidden_field_tag(:month_bday, @bday[0]) %>
+<div id="2cols">
+	<div id="canned">
+		<h2 class = "title_facts">My canned messages</h2>
+		<span class="tip">Click to add them to your message</span>
+		<table id="canned_messages">
+		  <tbody>
+		    <% @canned.each do |c| %>
+		    	<tr class="canned_row">
+			      <td><%= c.title %></td>
+						<td class="hidden"><%= c.message %></div>
+			    </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+	<div id="div_form">
+		<%= form_tag :action => 'send_message' do %>
+		  <%= text_area_tag("message_text", "Happy Birthday!\nDid you know that...", :size => "50x12") %>
+		  <%= hidden_field_tag(:destination, @uid) %>
+		  <%= hidden_field_tag(:day_bday, @bday[1]) %>
+		  <%= hidden_field_tag(:month_bday, @bday[0]) %>
 
-  <br />
-  <span class="time">Time to send:</span>
-	<select name="hour">
-		<% (0..23).each do |h| %>
-			<option value="<%= h %>"><%= h %></option>
+		  <br />
+		  <span class="time">Time to send:</span> 
+			<select name="hour">
+				<% (0..23).each do |h| %>
+					<option value="<%= h %>"><%= h %></option>
+				<% end %>
+			</select>
+			<span class="time">:</span>
+			<select name="min">
+				<option value="00">00</option>
+				<option value="30">30</option>
+			</select>
+		  <%= submit_tag "Save" %>
 		<% end %>
-	</select>
-	<span class="time">:</span>
-	<select name="min">
-		<option value="00">00</option>
-		<option value="30">30</option>
-	</select>
-  <%= submit_tag "Save" %>
-<% end %>
+  </br>
+		<span id="inspiration" class="button">I need some inspiration...</span>
+	</div>
+
+</div>
 
 <h2 class="title_facts">Curious facts about <%=day_and_month(params['bday'])%></h2> 
 <span class="tip">Click on the facts to add them to your message</span>
