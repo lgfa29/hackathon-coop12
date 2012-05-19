@@ -10,8 +10,28 @@ class FriendsController < ApplicationController
 	end
 	
 	def send_message
-	  @graph = Koala::Facebook::API.new(@oauth_token)
-	  @graph.put_wall_post(params[:message], {}, params[:destination], {})
+		m = Message.create
+				
+		m.message = params[:message_text]
+		m.facebook_id = params[:destination]
+		m.token = @oauth_token
+		m.hour_send = params[:hour]
+		m.min_send = params[:min]
+		m.month_bday = params[:month_bday]
+		m.day_bday = params[:day_bday]
+		
+		salvou = m.save
+		
+		puts salvou
+		puts m
+		puts m.message
+		puts params
+	
+#	  @graph = Koala::Facebook::API.new(@oauth_token)
+#	  @graph.put_wall_post(params[:message], {}, params[:destination], {})
+
+		flash[:success] = "Message scheduled"
+		redirect_to root_url
 	end
 	
 	def write_message
