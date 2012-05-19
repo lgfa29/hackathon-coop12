@@ -10,12 +10,12 @@
 			 		<span style="float: left; color: #3B5998; font-size: 15px;"><b><%=aniversario["name"]%> </b> </span></br>
 		 			<span style="float: left; color: gray; font-size: 12px;"><%=aniversario["birthday_date"] %></span></br>
 		 			<% if  Friend.has_message(aniversario["uid"])%>
-		 				<span id="<%=aniversario['uid']%>"style="float: left; color: #3B5998; font-size: 12px; cursor: pointer">Cancel message</span>
-		 				<span id="<%=aniversario['uid']%>" style="float: left; margin: 10px; font-family: sans-serif; color: gray; font-size: 12px;">
+		 				<span class="cancelButton" id="<%=aniversario['uid']%>" style="float: left; color: #3B5998; font-size: 12px; cursor: pointer"onClick="">Cancel message</span>
+		 				<span id="<%=aniversario['uid']%>_message" style="float: left; margin: 10px; font-family: sans-serif; color: gray; font-size: 12px;">
 		 					<%= Friend.get_message(aniversario["uid"]).message %>
 		 				</span>
 		 				<%= link_to :controller => "friends", :action => "write_message", :uid => aniversario['uid'], :bday => aniversario['birthday_date'] do %>
-                            <span style="display: none; float: left; color: #3B5998; font-size: 12px;">Schedule a message</span>
+                            <span id="<%=aniversario['uid']%>_send" style="display: none; float: left; color: #3B5998; font-size: 12px;">Schedule a message</span>
                         <% end %>
 		 			<% else %>
 		 				<%= link_to :controller => "friends", :action => "write_message", :uid => aniversario['uid'], :bday => aniversario['birthday_date'] do %>
@@ -30,4 +30,13 @@
  <% end %>
 </table>
 
+<script>
+    $(".cancelButton").click(function () {
+    	var id = $(this).attr("id")
+      	$("#"+id+"_message").remove()
+      	$("#"+id+"_send").show()
+      	$("#"+id).remove()
+    });
+
+</script>
 
