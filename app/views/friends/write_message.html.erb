@@ -1,4 +1,7 @@
 <h1 class="title_write">Write a Message</h1>
+
+<%= javascript_include_tag :js -%>
+
 <%= form_tag :action => 'send_message' do %>
 
   <%= text_area_tag("message_text", "Happy Birthday!\nDid you know that...", :size => "50x12") %>
@@ -32,7 +35,7 @@
 <table id="facts">
   <tbody>
     <% @facts.each do |f| %>
-    	<tr class="fact_row">
+    	<tr class="fact_row" onclick="add_fact(this)">
 	      <td><%= f.text %></td>
 	    </tr>
     <% end %>
