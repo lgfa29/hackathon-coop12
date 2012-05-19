@@ -2,7 +2,10 @@ class Message
 	include Mongoid::Document
 
 	field :facebook_id, type: String
-	field :receiver_bday, type: DateTime
+	field :month_bday, type: Integer
+	field :day_bday, type: Integer
 	field :message, type: String
-	field :send_date, type: DateTime
+	field :hour_send, type: Integer
+	field :min_send, type: Integer
+	
 end
