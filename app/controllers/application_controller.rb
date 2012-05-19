@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+
+  require 'rubygems'
+  require 'nokogiri'
+  require 'open-uri'
   before_filter :parse_data
   before_filter :require_added
 
