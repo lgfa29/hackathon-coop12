@@ -1,6 +1,13 @@
 <h1>Send a Message</h1>
 <%= form_tag :action => 'send_message' do %>
-  <%= text_area_tag(:message, "Happy Birthday!", :size => "50x12") %>
+  <%= text_area_tag("message_text", "Happy Birthday!", :size => "50x12") %>
+  <%= hidden_field_tag(:destination, "100001459536743") %>
   <br />
   <%= submit_tag "Enviar" %>
+<% end %>
+
+<h2>Did you know?</h2> 
+<p> <a href="javascript:document.getElementById('message_text').value += 'something';">Qualquer baboseira</a> </p>
+<% for fact in @facts %>
+	<p><%= fact.text %></p>
 <% end %>
