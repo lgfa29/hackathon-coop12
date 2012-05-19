@@ -21,7 +21,7 @@ task :populate_db => :environment do
 		i = 0
 		years.each do |year|
 			f = Fact.create
-			f.text = "#{year} - #{facts[i]}"
+			f.text = "In #{year} #{facts[i]}"
 			f.day = day.day
 			f.month = day.month
 			f.year = year.to_i
@@ -47,7 +47,7 @@ task :populate_db => :environment do
 		i = 0
 		years.each do |year|
 			f = Fact.create
-			f.text = "#{year} - #{facts[i]}"
+			f.text = "In #{year} #{facts[i]}"
 			f.day = day.day
 			f.month = day.month
 			f.year = year.to_i

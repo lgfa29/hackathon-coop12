@@ -42,3 +42,31 @@ table {
 	font-size: 15px; 
 	font-style: italic;
 }
+
+form {
+	width: 70%;
+}
+
+
+#canned {
+	float:right;
+	width: 25%;
+	padding: 10px;
+	
+}
+
+#canned_messages {
+	width:100%;
+}
+#canned_messages .hidden{
+	display:none;
+}
+
+.canned_row {
+	width: 100%;
+}
+
+.canned_row:hover {
+  background-color: #C3C3C3;
+	cursor: pointer;
+}

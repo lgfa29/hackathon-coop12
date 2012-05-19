@@ -34,6 +34,10 @@ class FriendsController < ApplicationController
 	  @bday =  params['bday'].split('/')
 	  @graph = Koala::Facebook::API.new(@oauth_token)
 	  @facts = Fact.where(:month => @bday[0], :day => @bday[1] )
+	  
+    @profile = @graph.get_object("me")
+    @user_id = @profile["id"]
+    @canned = Cannedmessage.where(:facebook_id => @user_id)
 	end
 	
 end

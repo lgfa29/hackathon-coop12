@@ -2,7 +2,7 @@
 	<p class="success"><%= flash[:success] %></p>
 <% end %>
 
-<span style="color: #3B5998; font-family: sans-serif; font-size: 25px; font-weight: bold;">Next Birthdays</span>
+<span class="title_birthdays">Next Birthdays</span>
 
 <table border="0" style="width: 100%; margin-top: 12px;">
  <% if @aniversarios %>
@@ -22,7 +22,7 @@
                             <span id="<%=aniversario['uid']%>_send" style="display: none; float: left; color: #3B5998; font-size: 12px;">Schedule a message</span>
                         <% end %>
 		 			<% else %>
-		 				<%= link_to :controller => "friends", :action => "write_message", :uid => aniversario['uid'], :bday => aniversario['birthday_date'] do %>
+		 				<%= link_to :controller => "friends", :action => "write_message", :uid => aniversario['uid'], :name => aniversario['name'], :pic_square => aniversario['pic_square'], :bday => aniversario['birthday_date'] do %>
                             <span style="float: left; color: #3B5998; font-size: 12px;">Schedule a message</span>
                         <% end %>
 		 			<%end%>
