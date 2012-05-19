@@ -1,7 +1,7 @@
 task :cron => :environment do
 	
 	begin
-		messages = Message.where(:month_bday => Time.now.month, :day_bday => Time.now.day, :hour_send.gte => Time.now.hour, :hour_send.lt => Time.now.hour + 10.minute, :min_send.gte => Time.now.min, :min_send.lt => Time.now.min + 10.minute)
+		messages = Message.where(:month_bday => Time.now.month, :day_bday => Time.now.day, :hour_send.lte => Time.now.hour, :min_send.lte => Time.now.min)
 		
 		puts ">> Mensagens a serem enviadas: #{messages.all.count}"
 				
