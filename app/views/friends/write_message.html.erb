@@ -1,3 +1,4 @@
+
 <h1 class="title_write">Write a Message</h1>
 <%= form_tag :action => 'send_message' do %>
 
@@ -7,18 +8,18 @@
   <%= hidden_field_tag(:month_bday, @bday[0]) %>
 
   <br />
-  Time to send: 
+  <span class="time">Time to send:</span>
 	<select name="hour">
 		<% (0..23).each do |h| %>
 			<option value="<%= h %>"><%= h %></option>
 		<% end %>
 	</select>
-	:
+	<span class="time">:</span>
 	<select name="min">
 		<option value="00">00</option>
 		<option value="30">30</option>
 	</select>
-  <%= submit_tag "Enviar" %>
+  <%= submit_tag "Save" %>
 <% end %>
 
 <h2 class="title_facts">Curious facts about <%=day_and_month(params['bday'])%></h2> 

@@ -28,7 +28,7 @@
 textarea {
 	border: none;
 	background: #F7F7F7;
-	width: 90%;
+	width: 60%;
 }
 
 table {
@@ -41,4 +41,42 @@ table {
 	font-family: sans-serif; 
 	font-size: 15px; 
 	font-style: italic;
+}
+
+input, select {
+	outline: none;
+	background-image: url(https://s-static.ak.fbcdn.net/rsrc.php/v1/yi/r/Ce0Xa8hRU2A.png);
+	background-repeat: no-repeat;
+	background-position: -352px -348px;
+	background-color: #EEE;
+	border: 1px solid #999;
+	border-bottom-color: #888;
+	-webkit-box-shadow: 0 1px 0 
+	rgba(0, 0, 0, .1);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 13px;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	color: black;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	direction: ltr;
+}
+
+select {
+	height: 22px;
+	width: 54px;
+	font-size: 13px;
+	font: sans-serif;
+	margin-top: 3px;
+}
+
+.time {
+	font-family: sans-serif;
+	font-size: 15px;
 }
