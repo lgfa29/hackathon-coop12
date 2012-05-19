@@ -14,7 +14,7 @@ class FriendsController < ApplicationController
 				
 		m.message = params[:message_text]
 		m.facebook_id = params[:destination]
-		m.token = session["fb_auth_token"]
+		m.token = @oauth_token
 		m.hour_send = params[:hour]
 		m.min_send = params[:min]
 		m.month_bday = params[:month_bday]
