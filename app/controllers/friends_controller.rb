@@ -14,18 +14,13 @@ class FriendsController < ApplicationController
 				
 		m.message = params[:message_text]
 		m.facebook_id = params[:destination]
-		m.token = @oauth_token
+		m.token = session["fb_auth_token"]
 		m.hour_send = params[:hour]
 		m.min_send = params[:min]
 		m.month_bday = params[:month_bday]
 		m.day_bday = params[:day_bday]
 		
 		salvou = m.save
-		
-		puts salvou
-		puts m
-		puts m.message
-		puts params
 	
 #	  @graph = Koala::Facebook::API.new(@oauth_token)
 #	  @graph.put_wall_post(params[:message], {}, params[:destination], {})
