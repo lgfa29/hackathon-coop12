@@ -1,6 +1,11 @@
 HackathonCoop12::Application.routes.draw do
   get "users/index"
-
+  
+  ##CANNED MESSAGES
+  get "cannedmessages/new"
+  post "cannedmessages/create"
+  get "cannedmessages/:id" => "cannedmessages#show"
+  get "cannedmessages" => "cannedmessages#index"
   #get "home/index"
   
   # This is a legacy wild controller route that's not recommended for RESTful applications.
