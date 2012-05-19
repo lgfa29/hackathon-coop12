@@ -1,6 +1,19 @@
 <h1>Send a Message</h1>
 <%= form_tag :action => 'send_message' do %>
-  <%= text_area_tag(:message, "Happy Birthday!", :size => "50x12") %>
+  <%= text_area_tag("message_text", "Happy Birthday!", :size => "50x12") %>
+  <%= hidden_field_tag(:destination, "100001459536743") %>
   <br />
   <%= submit_tag "Enviar" %>
 <% end %>
+
+<h2>Curious facts about <%=day_and_month(params['bday'])%></h2> 
+
+<table id="facts">
+  <tbody>
+    <% @facts.each do |f| %>
+    	<tr class="fact_row">
+	      <td><%= f.text %></td>
+	    </tr>
+    <% end %>
+  </tbody>
+</table>
