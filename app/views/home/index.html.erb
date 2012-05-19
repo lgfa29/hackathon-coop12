@@ -1,0 +1,13 @@
+Ola home index
+<table border="0">
+ <% if @aniversarios %>
+ <% for aniversario in @aniversarios %>
+ <tr>
+ <td><b><%=aniversario["name"]%> </b></td>
+ </tr>
+ <tr>
+ <td><%=aniversario["birthday_date"] %></td>
+ </tr>
+ <% end %>
+ <% end %>
+</table>
