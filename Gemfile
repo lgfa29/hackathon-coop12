@@ -9,6 +9,7 @@ gem "heroku"
 gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
 gem "thin"
+gem "nokogiri"
 
 
 # Gems used only for assets and not required
