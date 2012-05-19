@@ -1,7 +1,3 @@
-$(document).ready ->
-	$('#facts tr').click ->
-		$('#message_text').append("\n"+$(this).find("td").text())
-
 
 $(document).ready ->
 	$('.canned_row').click ->
@@ -30,3 +26,4 @@ $(document).ready ->
 	$("#inspiration").click ->
 		$("#message_text").append "\n" + messages[i]
 		i = Math.floor(11 * Math.random())
+

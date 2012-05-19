@@ -21,11 +21,6 @@ class FriendsController < ApplicationController
 		m.day_bday = params[:day_bday]
 		
 		salvou = m.save
-		
-		puts salvou
-		puts m
-		puts m.message
-		puts params
 	
 #	  @graph = Koala::Facebook::API.new(@oauth_token)
 #	  @graph.put_wall_post(params[:message], {}, params[:destination], {})

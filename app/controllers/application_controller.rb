@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   require 'rubygems'
   require 'nokogiri'
   require 'open-uri'
+  
   before_filter :parse_data
   before_filter :require_added
 
@@ -29,6 +30,8 @@ class ApplicationController < ActionController::Base
       # This is what your parsed JSON should look like
       # @signed_data => {"expires"=>1300770000, "algorithm"=>"HMAC-SHA256", "user_id"=>"15200391", "oauth_token"=>"171604092868057|2.1BpV6nfSeWFnQOINw9m5aQ__.3600.1300770000-15200391|Ai5w-skxZRrUGug6o9Oyh6ABgRg", "user"=>{"country"=>"us", "locale"=>"en_US", "age"=>{"min"=>21}}, "issued_at"=>1300764866}
 
+		puts ">> #{@signed_data}"
+	
       #The existance of an oauth token means the user has given permission to the app.
       @oauth_token = @signed_data["oauth_token"]
 
@@ -37,12 +40,12 @@ class ApplicationController < ActionController::Base
     def require_added
       if @oauth_token.to_s.blank?
         ##DEV
-        render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=384885211564386&redirect_uri=http://apps.facebook.com/hack-birthday-dev/&scope=user_likes,friends_birthday,read_stream, publish_stream";</script>|
+        # render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=384885211564386&redirect_uri=http://apps.facebook.com/hack-birthday-dev/&scope=user_likes,friends_birthday,read_stream, publish_stream";</script>|
         
         #render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=#{APP_ID}&redirect_uri=#{CANVAS_URL}&scope=user_likes,friends_birthday,read_stream";</script>|
         
         ##PROD
-        #render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=229748143802500&redirect_uri=https://apps.facebook.com/birthdayhackathon/&scope=user_likes,friends_birthday,read_stream";</script>|
+        render :text=>%|<script>window.top.location.href = "https://graph.facebook.com/oauth/authorize?client_id=229748143802500&redirect_uri=https://apps.facebook.com/birthdayhackathon/&scope=user_likes,friends_birthday,read_stream, publish_stream, offline_access";</script>|
         
         return false
       end
