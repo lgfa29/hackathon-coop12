@@ -1,7 +1,5 @@
 
-$(document).ready ->
-	$('.canned_row').click ->
-		$('#message_text').append("\n"+$(this).find(".hidden").text())
+
 		
 $(document).ready ->
 	$('#inspiration').click ->
