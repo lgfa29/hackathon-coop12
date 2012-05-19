@@ -37,12 +37,7 @@
 <script>
     $(".cancelButton").click(function () {
 			
-			$.post("messages/cancel_message", { id: $(this).attr("id") },
-			     function(data) {
-			          alert(id);
-			          alert(data);
-			 });
-			
+			$.post("messages/cancel_message/", { id: $(this).attr("id") });
 			
     	var id = $(this).attr("id")
       	$("#"+id+"_message").remove()
