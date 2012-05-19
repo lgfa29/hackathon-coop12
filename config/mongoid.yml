@@ -1,0 +1,11 @@
+development:
+  host: localhost
+  database: hackathon_coop12_development
+
+test:
+  host: localhost
+  database: hackathon_coop12_test
+
+# set these environment variables on your prod server
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
