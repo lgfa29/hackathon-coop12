@@ -1,11 +1,13 @@
-<p>
-  <strong>Title:</strong>
+<p class="time">
+  <span style="color: #3B5998;"><strong>Title:</strong></span>
   <%= @cannedmessage.title %>
 </p>
  
-<p>
-  <strong>Message:</strong>
+<p class="time">
+  <span style="color: #3B5998;"><strong>Message:</strong></span>
   <%= @cannedmessage.message %>
 </p>
 
-<%= link_to 'See all canned messages', :action => :index %>
+<%= link_to :action => :index do %>
+	<span class="button">See all canned messages</span>
+<% end %>
