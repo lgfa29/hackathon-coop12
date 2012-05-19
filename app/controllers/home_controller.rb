@@ -7,7 +7,7 @@ class HomeController < ApplicationController
                                                           AND substr(birthday_date, 3, 5) >= '19')  
                                                           ORDER BY birthday_date"
     @aniversarios = @graph.fql_query(query)
-    
+ 
     
     #@api.put_wall_post(process_result(fql))
     #@likes = @graph.get_connections("me", "likes")

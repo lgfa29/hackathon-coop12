@@ -1,10 +1,28 @@
 <h1>Send a Message</h1>
 <%= form_tag :action => 'send_message' do %>
   <%= text_area_tag("message_text", "Happy Birthday!", :size => "50x12") %>
-  <%= hidden_field_tag(:destination, "100001459536743") %>
+  <%= hidden_field_tag(:destination, @uid) %>
+  <%= hidden_field_tag(:day_bday, @bday[1]) %>
+  <%= hidden_field_tag(:month_bday, @bday[0]) %>
   <br />
+  Time to send: 
+	<select name="hour">
+		<% (0..23).each do |h| %>
+			<option value="<%= h %>"><%= h %></option>
+		<% end %>
+	</select>
+	:
+	<select name="min">
+		<option value="00">00</option>
+		<option value="30">30</option>
+	</select>
   <%= submit_tag "Enviar" %>
 <% end %>
+
+<br />
+
+
+
 
 <h2>Curious facts about <%=day_and_month(params['bday'])%></h2> 
 
