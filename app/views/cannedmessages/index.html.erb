@@ -1,0 +1,19 @@
+<h1>My Canned Messages</h1>
+
+<%= link_to 'New Canned Message', :action => :new %>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Message</th>
+  </tr>
+ 
+  <% @cannedmessages.each do |c| %>
+    <tr>
+			<td><%= c.title %></td>
+      <td><%= c.message %></td>
+    </tr>
+  <% end %>
+
+
+</table>
