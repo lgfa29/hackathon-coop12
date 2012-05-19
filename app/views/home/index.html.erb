@@ -9,7 +9,6 @@
 		 			<img style="float: left; margin-right: 15px;" src="<%=aniversario["pic_square"]%>">
 			 		<span style="float: left; color: #3B5998; font-size: 15px;"><b><%=aniversario["name"]%> </b> </span></br>
 		 			<span style="float: left; color: gray; font-size: 12px;"><%=aniversario["birthday_date"] %></span></br>
-
 		 			<% if  Friend.has_message(aniversario["uid"])%>
 		 				<span id="<%=aniversario['uid']%>"style="float: left; color: #3B5998; font-size: 12px; cursor: pointer">Cancel message</span>
 		 				<span id="<%=aniversario['uid']%>" style="float: left; margin: 10px; font-family: sans-serif; color: gray; font-size: 12px;">
