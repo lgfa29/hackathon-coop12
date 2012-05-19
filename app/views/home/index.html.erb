@@ -19,6 +19,8 @@
 		 			<% if  Friend.has_message(aniversario["uid"])%>
 		 				<span class="cancelButton" id="<%=aniversario['uid']%>" style="float: left; color: #3B5998; font-size: 12px; cursor: pointer"onClick="">Cancel message</span>
 		 				<span id="<%=aniversario['uid']%>_message" style="float: left; margin: 10px; font-family: sans-serif; color: gray; font-size: 12px;">
+		 					<%= Friend.get_message(aniversario["uid"]).hour_send %>:
+		 					<%= Friend.get_message(aniversario["uid"]).min_send %>
 		 					<%= Friend.get_message(aniversario["uid"]).message %>
 		 				</span>
 		 				<%= link_to :controller => "friends", :action => "write_message", :uid => aniversario['uid'], :bday => aniversario['birthday_date'] do %>
