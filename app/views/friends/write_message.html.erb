@@ -1,0 +1,6 @@
+<h1>Send a Message</h1>
+<%= form_tag :action => 'send_message' do %>
+  <%= text_area_tag(:message, "Happy Birthday!", :size => "50x12") %>
+  <br />
+  <%= submit_tag "Enviar" %>
+<% end %>
