@@ -6,6 +6,9 @@ development:
  canvas_url: https://apps.facebook.com/hack-birthday-dev/
 
 test:
+ app_id: 384885211564386
+ secret_key: 856dad484e9a35cfc26c378abc3ccb34
+ canvas_url: https://apps.facebook.com/birthdayhackathon/
  
 production:
  app_id: 384885211564386
