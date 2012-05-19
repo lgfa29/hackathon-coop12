@@ -12,7 +12,7 @@
 		<table id="canned_messages">
 		  <tbody>
 		    <% @canned.each do |c| %>
-		    	<tr class="canned_row">
+		    	<tr class="canned_row" onclick="add_canned(this)">
 			      <td><%= c.title %></td>
 						<td class="hidden"><%= c.message %></div>
 			    </tr>
