@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     end_date = start_date+4.weeks
 
     query="
-        SELECT name, birthday_date, pic_big 
+        SELECT name, birthday_date, pic_square 
         FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) 
         AND strlen(birthday_date) != 0 
         AND ((substr(birthday_date, 0, 2) = '%s' AND substr(birthday_date, 3, 5) >= '%s')
