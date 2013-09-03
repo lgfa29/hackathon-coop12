@@ -11,6 +11,7 @@ gem "bson_ext", "~> 1.5"
 gem "thin"
 gem "nokogiri"
 
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
